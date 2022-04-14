@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
 import * as game from '../index.js';
 
@@ -20,8 +19,9 @@ const startCalcGame = (rounds) => {
   const name = greeting();
   game.printRule('What is the result of the expression?');
 
+  let isRightAnswer = true;
   let i = 1;
-  while (i <= rounds) {
+  while (i <= rounds && isRightAnswer) {
     const num1 = game.getRandomInt(0, 100);
     const num2 = game.getRandomInt(0, 100);
     const operationNum = game.getRandomInt(0, 3);
@@ -29,14 +29,12 @@ const startCalcGame = (rounds) => {
     const expression = `${num1} ${operations[operationNum]} ${num2}`;
 
     console.log(`Question: ${expression}`);
-    const userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = game.getAnswer();
     const resultAnswer = calculateExpression(num1, num2, operations[operationNum]);
 
-    if (Number(userAnswer) !== resultAnswer) {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${resultAnswer}.`);
+    isRightAnswer = game.comapreAnswers(userAnswer, resultAnswer);
+    if (!isRightAnswer) {
       break;
-    } else {
-      console.log('Correct!');
     }
 
     i += 1;
