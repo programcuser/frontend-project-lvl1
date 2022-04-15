@@ -18,7 +18,7 @@ export const comapreAnswers = (userAnswer, expectedAnswer) => {
   if (result) {
     console.log('Correct!');
   } else {
-    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${expectedAnswer}.`);
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
   }
 
   return result;
