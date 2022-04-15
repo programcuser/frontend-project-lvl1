@@ -25,11 +25,7 @@ const startGcdGame = (rounds) => {
     i += 1;
   }
 
-  if (i === rounds + 1) {
-    console.log(`Congratulations, ${name}!`);
-  } else {
-    console.log(`Let's try again, ${name}`);
-  }
+  game.printGameResult(i, rounds, name);
 };
 
 export default startGcdGame;

@@ -36,3 +36,11 @@ export const gcd = (num1, num2) => {
   }
   return tmpNum1;
 };
+
+export const printGameResult = (currentRound, expectedRound, playerName) => {
+  if (currentRound === expectedRound + 1) {
+    console.log(`Congratulations, ${playerName}!`);
+  } else {
+    console.log(`Let's try again, ${playerName}`);
+  }
+};
