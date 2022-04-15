@@ -23,3 +23,16 @@ export const comapreAnswers = (userAnswer, expectedAnswer) => {
 
   return result;
 };
+
+export const gcd = (num1, num2) => {
+  let tmpNum1 = num1;
+  let tmpNum2 = num2;
+  let temp;
+
+  while (tmpNum2 !== 0) {
+    temp = tmpNum1 % tmpNum2;
+    tmpNum1 = tmpNum2;
+    tmpNum2 = temp;
+  }
+  return tmpNum1;
+};
