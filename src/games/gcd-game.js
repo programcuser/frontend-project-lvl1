@@ -1,7 +1,6 @@
 import greeting from '../cli.js';
 import * as game from '../index.js';
 
-
 const startGcdGame = (rounds) => {
   const name = greeting();
   game.printRule('Find the greatest common divisor of given numbers.');
